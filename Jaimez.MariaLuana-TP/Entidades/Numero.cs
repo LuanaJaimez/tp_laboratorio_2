@@ -18,18 +18,18 @@ namespace Entidades
 
         #endregion
 
-
+        
         /// <summary>
         /// Setea el numero, lo valida antes de setearlo
         /// </summary>
-        public double SetNumero
+        public string SetNumero
         { 
             set 
             {
                 this.numero = ValidarNumero(Convert.ToString(value)); 
             } 
         }
-
+        
 
         #region Constructores
 
@@ -58,7 +58,7 @@ namespace Entidades
         /// <param name="strNumero">Numero a guardar de tipo string</param>
         public Numero(string strNumero)
         {
-            this.numero = Convert.ToDouble(strNumero);
+            this.SetNumero = strNumero;
         }
 
         #endregion
@@ -247,15 +247,14 @@ namespace Entidades
         /// <returns>El numero validado</returns>
         private double ValidarNumero(string strNumero)
         {
-            double aux;
+            double aux = 0;
 
-            if (double.TryParse(strNumero, out aux))
-            {
-                aux = 0;
-            }
+            double.TryParse(strNumero, out aux);
 
             return aux;
         }
+
+
 
         #endregion
     }
