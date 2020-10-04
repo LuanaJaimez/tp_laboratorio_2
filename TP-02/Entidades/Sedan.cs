@@ -10,9 +10,11 @@ namespace Entidades
 {
     public class Sedan : Vehiculo
     {
+        //Enumerados y atributos
         public enum ETipo { CuatroPuertas, CincoPuertas }
         ETipo tipo;
 
+        #region "Constructores"
         /// <summary>
         /// Por defecto, TIPO será CuatroPuertas
         /// </summary>
@@ -25,11 +27,19 @@ namespace Entidades
             this.tipo = ETipo.CuatroPuertas;
         }
 
+        /// <summary>
+        /// Eleccion de tipo
+        /// </summary>
+        /// <param name="marca"></param>
+        /// <param name="chasis"></param>
+        /// <param name="color"></param>
+        /// <param name="tipo"></param>
         public Sedan(EMarca marca, string chasis, ConsoleColor color, ETipo tipo)
             : base(chasis, marca, color)
         {
             this.tipo = tipo;
         }
+        #endregion
 
         /// <summary>
         /// Sedan son 'Mediano'
@@ -42,6 +52,11 @@ namespace Entidades
             }
         }
 
+        #region "Métodos"
+        /// <summary>
+        /// Cargar un string con los datos del vehiculo
+        /// </summary>
+        /// <returns>String con los datos</returns>
         public override sealed string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
@@ -55,5 +70,6 @@ namespace Entidades
 
             return sb.ToString();
         }
+        #endregion
     }
 }
