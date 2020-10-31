@@ -1,0 +1,34 @@
+CLASE DE Programacion POR NOMBRE COMPLETO: Lopez, Juan
+
+NACIONALIDAD: Argentino
+
+
+LEGAJO NUMERO: 1
+
+CLASES DEL DIA: 
+Programacion
+Legislacion
+
+ALUMNOS: 
+NOMBRE COMPLETO: Lopez, Juan
+
+NACIONALIDAD: Argentino
+
+
+LEGAJO NUMERO: 1
+
+ESTADO CUENTA: Becado
+TOMA CLASES DE Programacion
+
+NOMBRE COMPLETO: Gonzalez, Carlos
+
+NACIONALIDAD: Argentino
+
+
+LEGAJO NUMERO: 5
+
+ESTADO CUENTA: Cuota Al Dia
+TOMA CLASES DE Programacion
+
+<------------------------------------------------------------->
+

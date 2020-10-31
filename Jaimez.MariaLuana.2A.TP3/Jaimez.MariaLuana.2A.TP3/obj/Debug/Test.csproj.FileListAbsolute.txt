@@ -1,0 +1,16 @@
+C:\Users\luana\source\repos\Jaimez.MariaLuana.2A.TP3\Jaimez.MariaLuana.2A.TP3\obj\Debug\Test.csprojAssemblyReference.cache
+C:\Users\luana\source\repos\Jaimez.MariaLuana.2A.TP3\Jaimez.MariaLuana.2A.TP3\obj\Debug\Test.csproj.CoreCompileInputs.cache
+C:\Users\luana\source\repos\Jaimez.MariaLuana.2A.TP3\Jaimez.MariaLuana.2A.TP3\bin\Debug\Jaimez.MariaLuana.2A.TP3.exe.config
+C:\Users\luana\source\repos\Jaimez.MariaLuana.2A.TP3\Jaimez.MariaLuana.2A.TP3\bin\Debug\Jaimez.MariaLuana.2A.TP3.exe
+C:\Users\luana\source\repos\Jaimez.MariaLuana.2A.TP3\Jaimez.MariaLuana.2A.TP3\bin\Debug\Jaimez.MariaLuana.2A.TP3.pdb
+C:\Users\luana\source\repos\Jaimez.MariaLuana.2A.TP3\Jaimez.MariaLuana.2A.TP3\bin\Debug\Archivos.dll
+C:\Users\luana\source\repos\Jaimez.MariaLuana.2A.TP3\Jaimez.MariaLuana.2A.TP3\bin\Debug\ClasesAbstractas.dll
+C:\Users\luana\source\repos\Jaimez.MariaLuana.2A.TP3\Jaimez.MariaLuana.2A.TP3\bin\Debug\ClasesInstanciables.dll
+C:\Users\luana\source\repos\Jaimez.MariaLuana.2A.TP3\Jaimez.MariaLuana.2A.TP3\bin\Debug\Excepciones.dll
+C:\Users\luana\source\repos\Jaimez.MariaLuana.2A.TP3\Jaimez.MariaLuana.2A.TP3\bin\Debug\Archivos.pdb
+C:\Users\luana\source\repos\Jaimez.MariaLuana.2A.TP3\Jaimez.MariaLuana.2A.TP3\bin\Debug\ClasesAbstractas.pdb
+C:\Users\luana\source\repos\Jaimez.MariaLuana.2A.TP3\Jaimez.MariaLuana.2A.TP3\bin\Debug\ClasesInstanciables.pdb
+C:\Users\luana\source\repos\Jaimez.MariaLuana.2A.TP3\Jaimez.MariaLuana.2A.TP3\bin\Debug\Excepciones.pdb
+C:\Users\luana\source\repos\Jaimez.MariaLuana.2A.TP3\Jaimez.MariaLuana.2A.TP3\obj\Debug\Test.csproj.CopyComplete
+C:\Users\luana\source\repos\Jaimez.MariaLuana.2A.TP3\Jaimez.MariaLuana.2A.TP3\obj\Debug\Jaimez.MariaLuana.2A.TP3.exe
+C:\Users\luana\source\repos\Jaimez.MariaLuana.2A.TP3\Jaimez.MariaLuana.2A.TP3\obj\Debug\Jaimez.MariaLuana.2A.TP3.pdb
