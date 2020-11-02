@@ -8,6 +8,9 @@ using Archivos;
 
 namespace ClasesInstanciables
 {
+    /// <summary>
+    /// Clase publica Jornada
+    /// </summary>
     public class Jornada
     {
         #region Atributos
@@ -18,7 +21,9 @@ namespace ClasesInstanciables
         #endregion
 
         #region Propiedades
-
+        /// <summary>
+        /// Sobreescribe la lista Alumnos
+        /// </summary>
         public List<Alumno> Alumnos
         {
             get
@@ -32,6 +37,9 @@ namespace ClasesInstanciables
         }
 
 
+        /// <summary>
+        /// Sobreescribe la Clase
+        /// </summary>
         public Universidad.EClases Clase
         {
             get 
@@ -45,6 +53,9 @@ namespace ClasesInstanciables
         }
 
 
+        /// <summary>
+        /// Sobreescribe la lista de profesores
+        /// </summary>
         public Profesor Instructor
         {
             get
@@ -59,44 +70,63 @@ namespace ClasesInstanciables
         #endregion
 
         #region Constructores
-
+        /// <summary>
+        /// Constructor que inicializa la lista de alumnos
+        /// </summary>
         private Jornada()
         {
             alumnos = new List<Alumno>();
         }
  
 
+        /// <summary>
+        /// Inicializa Jornada
+        /// </summary>
+        /// <param name="clase"></param>
+        /// <param name="instructor"></param>
         public Jornada(Universidad.EClases clase, Profesor instructor)
             : this()
         {
-            this.clase = clase;
-            this.instructor = instructor;
+            this.Clase = clase;
+            this.Instructor = instructor;
         }
         #endregion
 
         #region Metodos
-
+        /// <summary>
+        /// Guarda la informacion de jornada en JornadaT.txt
+        /// </summary>
+        /// <param name="jornada"></param>
+        /// <returns></returns>
         public static bool Guardar(Jornada jornada)
         {
             Texto archivo = new Texto();
 
-            string ruta = AppDomain.CurrentDomain.BaseDirectory + "Texto.txt";
+            string ruta = AppDomain.CurrentDomain.BaseDirectory + "JornadaT.txt";
 
             return archivo.Guardar(ruta, jornada.ToString());
         }
 
 
+        /// <summary>
+        /// Lee los datos guardados de JornadaT.txt
+        /// </summary>
+        /// <returns></returns>
         public static string Leer()
         {
             Texto archivo = new Texto();
-
-            string ruta = AppDomain.CurrentDomain.BaseDirectory + "Texto.txt";
-            archivo.Leer(ruta, out string datos);
+            string datos;
+            string ruta = AppDomain.CurrentDomain.BaseDirectory + "JornadaT.txt";
+            archivo.Leer(ruta, out datos);
 
             return datos;
         }
 
 
+        /// <summary>
+        /// Crea una cadena que tiene los datos de la jornada
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
@@ -115,7 +145,12 @@ namespace ClasesInstanciables
         #endregion
 
         #region Operadores
-
+        /// <summary>
+        /// Una Jornada será igual a un Alumno si el mismo participa de la clase
+        /// </summary>
+        /// <param name="j"></param>
+        /// <param name="a"></param>
+        /// <returns></returns>
         public static bool operator ==(Jornada j, Alumno a)
         {
             foreach (Universitario alumno in j.alumnos)
@@ -129,12 +164,24 @@ namespace ClasesInstanciables
         }
 
 
+        /// <summary>
+        /// Una Jornada será distinta a un Alumno si el mismo no participa de la clase
+        /// </summary>
+        /// <param name="j"></param>
+        /// <param name="a"></param>
+        /// <returns></returns>
         public static bool operator !=(Jornada j, Alumno a)
         {
             return !(j == a);
         }
 
 
+        /// <summary>
+        /// Agrega un alumno a la clase, validando que no este previamente agregado
+        /// </summary>
+        /// <param name="j"></param>
+        /// <param name="a"></param>
+        /// <returns></returns>
         public static Jornada operator +(Jornada j, Alumno a)
         {
             if (j != a)

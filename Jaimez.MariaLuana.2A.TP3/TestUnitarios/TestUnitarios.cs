@@ -11,16 +11,8 @@ namespace TestUnitarios
     public class TestUnitarios
     {
         [TestMethod]
-        [ExpectedException(typeof(NacionalidadInvalidaException))]
-        public void TestNacionalidadInvalidaException()
-        {
-            Alumno alumno = new Alumno(1, "Miguel", "Fernandez", "900000000", Persona.ENacionalidad.Argentino, Universidad.EClases.Laboratorio);
-
-        }
-
-        [TestMethod]
         [ExpectedException(typeof(AlumnoRepetidoException))]
-        public void TestAlumnoRepetidoException()
+        public void TestExcepcionAlumnoRepetido()
         {
             Alumno alumno = new Alumno(1, "Miguel", "Fernandez", "12345678", Persona.ENacionalidad.Argentino, Universidad.EClases.Laboratorio);
             Alumno alumno1 = new Alumno(1, "Cristian", "Jaimez", "35804304", Persona.ENacionalidad.Argentino, Universidad.EClases.Laboratorio);
@@ -31,40 +23,31 @@ namespace TestUnitarios
             Assert.AreEqual(alumno, alumno1);
         }
 
+
         [TestMethod]
         [ExpectedException(typeof(DniInvalidoException))]
-        public void DniInvalidoException()
+        public void TestExcepcionDniInvalido()
         {
-            Alumno alumno = new Alumno(1, "Marcelo", "Espinoza", "Jose", Persona.ENacionalidad.Argentino, Universidad.EClases.Laboratorio);
-
+            Alumno alumno = new Alumno(2, "Marcelo", "Espinoza", "ghj834", Persona.ENacionalidad.Argentino, Universidad.EClases.Laboratorio);
         }
 
-        [TestMethod]
-        public void SinProfesorException()
-        {
-            try
-            {
-                Universidad universidad = new Universidad();
-                Profesor profesor = universidad == Universidad.EClases.Laboratorio;
-            }
-            catch (Exception e)
-            {
-                Assert.IsInstanceOfType(e, typeof(SinProfesorException));
-            }
-        }
 
         [TestMethod]
-        public void TestCantidadDeAlumnos()
+        [ExpectedException(typeof(NacionalidadInvalidaException))]
+        public void TestExcepcionNacionalidadInvalida()
+        {
+            Alumno alumno = new Alumno(1, "Miguel", "Fernandez", "900000000", Persona.ENacionalidad.Argentino, Universidad.EClases.Laboratorio);
+        }
+
+
+        [TestMethod]
+        [ExpectedException(typeof(SinProfesorException))]
+        public void TestExcepcionSinProfesor()
         {
             Universidad universidad = new Universidad();
-            Alumno alumno1 = new Alumno(9, "Martin", "Palermo", "23569410", Persona.ENacionalidad.Argentino, Universidad.EClases.Laboratorio);
-            Alumno alumno2 = new Alumno(10, "Carlos", "Martinez", "26752869", Persona.ENacionalidad.Argentino, Universidad.EClases.Laboratorio);
-
-            universidad += alumno1;
-            universidad += alumno2;
-
-            Assert.AreEqual(2, universidad.Alumnos.Count);
+            universidad += Universidad.EClases.Laboratorio;
         }
+
 
         [TestMethod]
         public void TestValidaAtributoNull()
@@ -83,13 +66,11 @@ namespace TestUnitarios
             Assert.AreEqual(valor, alumno.DNI);
         }
 
-        [TestMethod]
-        public void ValidarJornadaNoEsNull()
+        public void TestColeccionAlumnos()
         {
-            Profesor profesor = new Profesor(666, "Maxi", "Neiner", "12345678", Persona.ENacionalidad.Argentino);
-            Jornada jornada = new Jornada(Universidad.EClases.Programacion, profesor);
+            Universidad universidad = new Universidad();
 
-            Assert.IsNotNull(jornada.Alumnos);
+            Assert.IsNotNull(universidad.Alumnos);
         }
     }
 }

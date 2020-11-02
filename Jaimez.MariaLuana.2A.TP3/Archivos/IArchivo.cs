@@ -6,9 +6,26 @@ using System.Threading.Tasks;
 
 namespace Archivos
 {
+    /// <summary>
+    /// Interfaz de lectura y escritura
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     interface IArchivo<T>
     {
+        /// <summary>
+        /// Metodo de interfaz
+        /// </summary>
+        /// <param name="archivo"></param>
+        /// <param name="datos"></param>
+        /// <returns></returns>
         bool Guardar(string archivo, T datos);
+
+        /// <summary>
+        /// Metodo de interfaz
+        /// </summary>
+        /// <param name="archivo"></param>
+        /// <param name="datos"></param>
+        /// <returns></returns>
         bool Leer(string archivo, out T datos);
     }
 }

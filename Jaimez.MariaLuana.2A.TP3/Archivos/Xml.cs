@@ -12,7 +12,12 @@ namespace Archivos
     public class Xml<T> : IArchivo<T>
     {
         #region Metodos
-
+        /// <summary>
+        /// Guarda el objeto xml en la ruta indicada
+        /// </summary>
+        /// <param name="archivo"></param>
+        /// <param name="datos"></param>
+        /// <returns></returns>
         public bool Guardar(string archivo, T datos)
         {
             try
@@ -32,6 +37,12 @@ namespace Archivos
         }
 
 
+        /// <summary>
+        /// Lee los datos de la ruta indicada
+        /// </summary>
+        /// <param name="archivo"></param>
+        /// <param name="datos"></param>
+        /// <returns></returns>
         public bool Leer(string archivo, out T datos)
         {
             try
