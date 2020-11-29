@@ -1,0 +1,9 @@
+C:\Users\luana\source\repos\Jaimez.MariaLuana.2A.TP4\Entidades\bin\Debug\Entidades.dll
+C:\Users\luana\source\repos\Jaimez.MariaLuana.2A.TP4\Entidades\bin\Debug\Entidades.pdb
+C:\Users\luana\source\repos\Jaimez.MariaLuana.2A.TP4\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\luana\source\repos\Jaimez.MariaLuana.2A.TP4\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\luana\source\repos\Jaimez.MariaLuana.2A.TP4\Entidades\obj\Debug\Entidades.dll
+C:\Users\luana\source\repos\Jaimez.MariaLuana.2A.TP4\Entidades\obj\Debug\Entidades.pdb
+C:\Users\luana\source\repos\Jaimez.MariaLuana.2A.TP4\Entidades\bin\Debug\Excepciones.dll
+C:\Users\luana\source\repos\Jaimez.MariaLuana.2A.TP4\Entidades\bin\Debug\Excepciones.pdb
+C:\Users\luana\source\repos\Jaimez.MariaLuana.2A.TP4\Entidades\obj\Debug\Entidades.csproj.CopyComplete

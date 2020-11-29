@@ -1,0 +1,12 @@
+C:\Users\luana\source\repos\Jaimez.MariaLuana.2A.TP4\Test\bin\Debug\Test.exe.config
+C:\Users\luana\source\repos\Jaimez.MariaLuana.2A.TP4\Test\bin\Debug\Test.exe
+C:\Users\luana\source\repos\Jaimez.MariaLuana.2A.TP4\Test\bin\Debug\Test.pdb
+C:\Users\luana\source\repos\Jaimez.MariaLuana.2A.TP4\Test\bin\Debug\Entidades.dll
+C:\Users\luana\source\repos\Jaimez.MariaLuana.2A.TP4\Test\bin\Debug\Entidades.pdb
+C:\Users\luana\source\repos\Jaimez.MariaLuana.2A.TP4\Test\obj\Debug\Test.csprojAssemblyReference.cache
+C:\Users\luana\source\repos\Jaimez.MariaLuana.2A.TP4\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
+C:\Users\luana\source\repos\Jaimez.MariaLuana.2A.TP4\Test\obj\Debug\Test.csproj.CopyComplete
+C:\Users\luana\source\repos\Jaimez.MariaLuana.2A.TP4\Test\obj\Debug\Test.exe
+C:\Users\luana\source\repos\Jaimez.MariaLuana.2A.TP4\Test\obj\Debug\Test.pdb
+C:\Users\luana\source\repos\Jaimez.MariaLuana.2A.TP4\Test\bin\Debug\Excepciones.dll
+C:\Users\luana\source\repos\Jaimez.MariaLuana.2A.TP4\Test\bin\Debug\Excepciones.pdb
