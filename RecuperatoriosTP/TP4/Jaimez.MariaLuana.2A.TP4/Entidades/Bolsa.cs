@@ -7,14 +7,39 @@ using Excepciones;
 
 namespace Entidades
 {
-    public class Bolsa
+    public class Bolsa<T> where T : Producto
     {
+        #region Enumerados
+        /// <summary>
+        /// Enumerado de precio
+        /// </summary>
+        enum EPrecio { PrecioDePrendas, PrecioDeAccesorios}
+        #endregion
+
         #region Atributos
         private int capacidad;
-        private List<Producto> productos;
+        private List<T> productos;
+
+        //Se disparar cuando el precio total de las prendas o los productos supere los 100000
+        public delegate void EventoPrecioSuperado(object sender, EventArgs e);
+        public event EventoPrecioSuperado PrecioSuperado;
         #endregion
 
         #region Propiedades
+        /// <summary>
+        /// Propiedad de Lectura de la lista de productos
+        /// </summary>
+        public List<T> Productos
+        {
+            get
+            {
+                return this.productos;
+            }
+        }
+
+        /// <summary>
+        /// Propiedad de Lectura del precio de prendas
+        /// </summary>
         public double PrecioDePrendas
         {
             get
@@ -23,6 +48,9 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Propiedad de Lectura del precio de accesorios
+        /// </summary>
         public double PrecioDeAccesorios
         {
             get
@@ -31,21 +59,37 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Propiedad de Lectura del precio total
+        /// </summary>
         public double PrecioTotal
         {
             get
             {
-                return this.ObtenerPrecio(EPrecio.PrecioTotal);
+                double precioTotal = 0;
+
+                foreach(T producto in this.productos)
+                {
+                    precioTotal += producto.precio;
+                }
+                return precioTotal;
             }
         }
         #endregion
 
         #region Constructores
+        /// <summary>
+        /// Inicializa lista
+        /// </summary>
         private Bolsa()
         {
-            this.productos = new List<Producto>();
+            this.productos = new List<T>();
         }
 
+        /// <summary>
+        /// Constructor define capacidad
+        /// </summary>
+        /// <param name="capacidad"></param>
         private Bolsa(int capacidad)
             : this()
         {
@@ -54,19 +98,22 @@ namespace Entidades
         #endregion
 
         #region Metodos
-        public static string Mostrar(Bolsa b)
+        /// <summary>
+        /// Carga los datos en una cadena
+        /// </summary>
+        /// <returns></returns>
+        public string Mostrar()
         {
             StringBuilder retorno = new StringBuilder();
 
-            retorno.AppendFormat("\nCapacidad: {0}\n", b.capacidad);
-            retorno.AppendFormat("Total por prendas: {0}\n", b.PrecioDePrendas);
-            retorno.AppendFormat("Total por accesarios: {0}\n", b.PrecioDeAccesorios);
-            retorno.AppendFormat("Total: {0}\n", b.PrecioTotal);
-            retorno.AppendLine("**********************************************");
-            retorno.AppendLine("Listado de productos");
-            retorno.AppendLine("**********************************************");
+            retorno.AppendFormat("\nCapacidad: {0}\n", capacidad);
+            retorno.AppendFormat("Total: {0}\n", PrecioTotal);
+            retorno.AppendFormat("Precio prendas: {0}\n", PrecioDePrendas);
+            retorno.AppendFormat("Precio accesorios: {0}\n", PrecioDeAccesorios);
+            retorno.AppendLine("------------------------------");
+            retorno.AppendLine("Listado de productos\n");
 
-            foreach (Producto produc in b.productos)
+            foreach (Producto produc in productos)
             {
                 retorno.AppendLine(produc.ToString());
             }
@@ -74,6 +121,11 @@ namespace Entidades
             return retorno.ToString();
         }
 
+        /// <summary>
+        /// Acumula los precios de las prendas y/o accesorios y devuelve el total
+        /// </summary>
+        /// <param name="precio"></param>
+        /// <returns></returns>
         private double ObtenerPrecio(EPrecio precio)
         {
             double precioAcumulado = 0;
@@ -88,17 +140,6 @@ namespace Entidades
                 {
                     precioAcumulado += (Accesorio)produc;
                 }
-                else if (precio == EPrecio.PrecioTotal)
-                {
-                    if (produc is Prenda)
-                    {
-                        precioAcumulado += (Double)(Prenda)produc;
-                    }
-                    else if (produc is Accesorio)
-                    {
-                        precioAcumulado += (Accesorio)produc;
-                    }
-                }
             }
             return precioAcumulado;
         }
@@ -106,45 +147,37 @@ namespace Entidades
         #endregion
 
         #region Operadores
-        public static implicit operator Bolsa(int capacidad)
+        /// <summary>
+        /// Define capacidad 
+        /// </summary>
+        /// <param name="capacidad"></param>
+        public static implicit operator Bolsa<T>(int capacidad)
         {
-            return new Bolsa(capacidad);
+            return new Bolsa<T>(capacidad);
         }
-
-        public static bool operator ==(Bolsa b, Producto p)
+ 
+        /// <summary>
+        /// Agregar un producto a la bolsa, si la bolsa no esta llena, si no tira una excepcion
+        /// </summary>
+        /// <param name="b"></param>
+        /// <param name="p"></param>
+        /// <returns></returns>
+        public static Bolsa<T> operator +(Bolsa<T> b, T p)
         {
-            bool retorno = false;
-
-            foreach (Producto item in b.productos)
+            if (b.capacidad > b.productos.Count)
             {
-                if (p.Equals(item))
+                try
                 {
-                    retorno = true;
-                    break;
+                    b.productos.Add(p);
+                    if(b.PrecioTotal > 100000)
+                    {
+                        b.PrecioSuperado(b, new EventArgs());
+                    }
                 }
-            }
-
-            return retorno;
-        }
-
-        public static bool operator !=(Bolsa b, Producto p)
-        {
-            return !(b == p);
-        }
-
-        public static Bolsa operator +(Bolsa b, Producto p)
-        {
-            if (b == p)
-            {
-                Console.WriteLine("El producto ya esta en la bolsa!\n");
-            }
-            else if (b.capacidad > b.productos.Count)
-            {
-                b.productos.Add(p);
-            }
-            else if (b.productos.Count == b.capacidad)
-            {
-                throw new BolsaLlenaException();
+                catch
+                {
+                    throw new BolsaLlenaException();
+                }
             }
 
             return b;

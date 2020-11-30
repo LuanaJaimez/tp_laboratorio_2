@@ -44,7 +44,8 @@
     <Compile Include="Accesorio.cs" />
     <Compile Include="Bolsa.cs" />
     <Compile Include="DatosBD.cs" />
-    <Compile Include="EPrecio.cs" />
+    <Compile Include="Deserializar.cs" />
+    <Compile Include="Serializar.cs" />
     <Compile Include="Prenda.cs" />
     <Compile Include="Producto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

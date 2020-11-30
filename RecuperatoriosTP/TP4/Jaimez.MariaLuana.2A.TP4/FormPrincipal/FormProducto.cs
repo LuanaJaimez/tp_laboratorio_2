@@ -25,6 +25,11 @@ namespace FormPrincipal
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Agrega una nueva prenda a la tabla de prendas
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAgregarP_Click(object sender, EventArgs e)
         {
             comando.Connection = conexion;
@@ -43,6 +48,11 @@ namespace FormPrincipal
             conexion.Close();
         }
 
+        /// <summary>
+        /// pregunta si esta seguro de querer salir, actua en base a la respuesta
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FormPrenda_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("¿Seguro quiere salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No)
@@ -51,6 +61,11 @@ namespace FormPrincipal
             }
         }
 
+        /// <summary>
+        /// vuelve al FormInicio
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnVolver_Click(object sender, EventArgs e)
         {
             FormInicio frmInicio = new FormInicio();
@@ -60,11 +75,21 @@ namespace FormPrincipal
             frmInicio.Show();
         }
 
+        /// <summary>
+        /// cierra el formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Valida que solo se ingresen numeros
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PrecioP_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsDigit(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
@@ -76,6 +101,11 @@ namespace FormPrincipal
             }
         }
 
+        /// <summary>
+        /// Agrega un nuevo accesorio a la tabla de accesorios
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAgregarA_Click(object sender, EventArgs e)
         {
             comando.Connection = conexion;
@@ -95,6 +125,11 @@ namespace FormPrincipal
             conexion.Close();
         }
 
+        /// <summary>
+        /// limpia todos los campos de los productos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             this.TipoP.Text = "Elija Tipo";

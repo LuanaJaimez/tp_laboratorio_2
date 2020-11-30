@@ -11,7 +11,8 @@ namespace Test
     {
         static void Main(string[] args)
         {
-            Bolsa bolsa = 6;
+            Bolsa<Prenda> bolsa = 6;
+            Bolsa<Accesorio> bolsa1 = 5;
 
             Prenda p1 = new Prenda(1, Prenda.ETipoPrenda.Remera, "Nike", 1500, 3);
 
@@ -33,10 +34,10 @@ namespace Test
             bolsa += p1; //repetido
 
             bolsa += p2;
-            bolsa += a1;
-            bolsa += a2;
-            bolsa += a3;
-            bolsa += a4;
+            bolsa1 += a1;
+            bolsa1 += a2;
+            bolsa1 += a3;
+            bolsa1 += a4;
 
             bolsa += p3; //sin lugar
             bolsa += p4;
@@ -47,7 +48,9 @@ namespace Test
             
             Console.WriteLine(a2.Equals(a4));
 
-            Console.WriteLine(Bolsa.Mostrar(bolsa));
+            Console.WriteLine(bolsa.Mostrar());
+            Console.WriteLine(bolsa1.Mostrar());
+            
 
             Console.ReadLine();
         }

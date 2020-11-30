@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormPrincipal", "FormPrinci
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excepciones", "Excepciones\Excepciones.csproj", "{282A9D07-16C8-4BCE-BF16-5ABB620E7642}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Archivo", "Archivo\Archivo.csproj", "{DDAB8949-B192-42ED-8621-747C0D089048}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestUnitarios", "TestUnitarios\TestUnitarios.csproj", "{BBEA11D7-26BA-42FB-8B25-ABBC892819E4}"
 EndProject
 Global
@@ -37,10 +35,6 @@ Global
 		{282A9D07-16C8-4BCE-BF16-5ABB620E7642}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{282A9D07-16C8-4BCE-BF16-5ABB620E7642}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{282A9D07-16C8-4BCE-BF16-5ABB620E7642}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DDAB8949-B192-42ED-8621-747C0D089048}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DDAB8949-B192-42ED-8621-747C0D089048}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DDAB8949-B192-42ED-8621-747C0D089048}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DDAB8949-B192-42ED-8621-747C0D089048}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BBEA11D7-26BA-42FB-8B25-ABBC892819E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BBEA11D7-26BA-42FB-8B25-ABBC892819E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBEA11D7-26BA-42FB-8B25-ABBC892819E4}.Release|Any CPU.ActiveCfg = Release|Any CPU

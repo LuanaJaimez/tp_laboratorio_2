@@ -24,6 +24,11 @@ namespace FormPrincipal
             InitializeComponent();
         }
 
+        /// <summary>
+        /// carga el datagrid con los datos de la tabla de prendas
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MostrarP_Click(object sender, EventArgs e)
         {
             try
@@ -36,6 +41,11 @@ namespace FormPrincipal
             }
         }
 
+        /// <summary>
+        /// carga el datagrid con los datos de la tabla de accesorios
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MostrarA_Click(object sender, EventArgs e)
         {
             try
@@ -48,11 +58,21 @@ namespace FormPrincipal
             }
         }
 
+        /// <summary>
+        /// cierra el formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// pregunta si esta seguro de querer salir, actua en base  a la respuesta
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FormPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("¿Seguro quiere salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No)
@@ -61,6 +81,11 @@ namespace FormPrincipal
             }
         }
 
+        /// <summary>
+        /// levanta el formulario para agregar un producto a la tabla
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AgregarP_Click(object sender, EventArgs e)
         {
             FormProducto frmPrenda = new FormProducto();
@@ -70,6 +95,11 @@ namespace FormPrincipal
             frmPrenda.Show();
         }
 
+        /// <summary>
+        /// levanta el formularios para eliminar un producto de la tabla
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void EliminarP_Click(object sender, EventArgs e)
         {
             FormEliminar frmEliminarProduc = new FormEliminar();
@@ -79,6 +109,11 @@ namespace FormPrincipal
             frmEliminarProduc.Show();
         }
 
+        /// <summary>
+        /// levanta el form para modificar un producto de la tabla
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ModificarP_Click(object sender, EventArgs e)
         {
             FormModificar frmModificarProduc = new FormModificar();
@@ -88,6 +123,11 @@ namespace FormPrincipal
             frmModificarProduc.Show();
         }
 
+        /// <summary>
+        /// levanta el form para generar una venta
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Venta_Click(object sender, EventArgs e)
         {
             FormVenta frmVentaProduc = new FormVenta();

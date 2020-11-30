@@ -28,6 +28,11 @@ namespace FormPrincipal
             InitializeComponent();
         }
 
+        /// <summary>
+        /// pregunta si esta seguro de querer salir, actua en base a la respuesta
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FormPrenda_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("¿Seguro quiere salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No)
@@ -36,6 +41,11 @@ namespace FormPrincipal
             }
         }
 
+        /// <summary>
+        /// vuelve al formInicio
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnVolver_Click(object sender, EventArgs e)
         {
             FormInicio frmInicio = new FormInicio();
@@ -45,11 +55,21 @@ namespace FormPrincipal
             frmInicio.Show();
         }
 
+        /// <summary>
+        /// cierra  el formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// valida que solo se ingresen numeros
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PrecioP_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsDigit(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
@@ -61,7 +81,11 @@ namespace FormPrincipal
             }
         }
 
-
+        /// <summary>
+        /// limpia todos los campos de los productos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             this.cbMP.Text = "Elija Tipo";
@@ -75,6 +99,11 @@ namespace FormPrincipal
             this.ModifCA.Text = "Ingrese Cantidad";
         }
 
+        /// <summary>
+        /// hace el update de la talba con los datos ingresados de la prenda
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnModifP_Click(object sender, EventArgs e)
         {
             string consulta = "UPDATE PrendaBD SET Tipo = @Tipo, Marca = @Marca, Precio = @Precio, Cantidad = @Cantidad WHERE PID = @PID";
@@ -92,6 +121,11 @@ namespace FormPrincipal
             MessageBox.Show("Prenda Actualizada");
         }
 
+        /// <summary>
+        /// hace el update de la talba con los datos ingresados del accesorio
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnModifA_Click(object sender, EventArgs e)
         {
             string consulta = "UPDATE AccesorioBD SET Tipo = @Tipo, Material = @Material, Marca = @Marca, Precio = @Precio, Cantidad = @Cantidad WHERE AID = @AID";
@@ -109,6 +143,11 @@ namespace FormPrincipal
             MessageBox.Show("Accesorio Actualizado");
         }
 
+        /// <summary>
+        /// carga los datagrid con los datos de las prendas y los accesorios que estan en sus respectivas tablas
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FormModificar_Load(object sender, EventArgs e)
         {
             dgPrendas.DataSource = prendas.MostrarPrendas();

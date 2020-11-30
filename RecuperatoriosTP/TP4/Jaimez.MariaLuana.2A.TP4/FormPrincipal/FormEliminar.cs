@@ -28,12 +28,22 @@ namespace FormPrincipal
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Muestra las prendas y los accesorios por el datagrid llamando al mostrar de DatosBD
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FormEliminar_Load(object sender, EventArgs e)
         {
             dtMostrarPrendas.DataSource = prendas.MostrarPrendas();
             dtMostrarAccesorios.DataSource = accesorios.MostrarAccesorios();
         }
 
+        /// <summary>
+        /// Vuelve al FormInicio
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnVolver_Click(object sender, EventArgs e)
         {
             FormInicio frmInicio = new FormInicio();
@@ -43,6 +53,11 @@ namespace FormPrincipal
             frmInicio.Show();
         }
 
+        /// <summary>
+        /// Elimina una prenda elegida por ID de la tabla de prendas
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void EliminarP_Click(object sender, EventArgs e)
         {
             string consulta = "DELETE FROM PrendaBD WHERE PID = @PID";
@@ -55,6 +70,11 @@ namespace FormPrincipal
             MessageBox.Show("Prenda Eliminada");
         }
 
+        /// <summary>
+        /// Elimina un accesorio elegido por ID de la tabla de accesorios
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void EliminarA_Click(object sender, EventArgs e)
         {
             string consulta = "DELETE FROM AccesorioBD WHERE AID = @AID";
@@ -67,11 +87,21 @@ namespace FormPrincipal
             MessageBox.Show("Accesorio Eliminado");
         }
 
+        /// <summary>
+        /// Cierra el formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Pregunta si esta seguro de querer salir, actua ante la respuesta
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FormEliminar_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("¿Seguro quiere salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No)

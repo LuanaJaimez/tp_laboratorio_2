@@ -9,14 +9,25 @@ namespace Entidades
     public abstract class Producto
     {
         #region Atributos
-        protected int idVenta;
-        protected string marca;
-        protected float precio;
-        protected int cantidad;
+        public int idVenta;
+        public string marca;
+        public float precio;
+        public int cantidad;
         #endregion
 
+        #region Constructores
+        /// <summary>
+        /// constructor por defecto
+        /// </summary>
         public Producto() { }
 
+        /// <summary>
+        /// contructor con parametros
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="marca"></param>
+        /// <param name="precio"></param>
+        /// <param name="cantidad"></param>
         public Producto(int id, string marca, float precio, int cantidad)
         {
             this.idVenta = id;
@@ -24,7 +35,13 @@ namespace Entidades
             this.precio = precio;
             this.cantidad = cantidad;
         }
+        #endregion
 
+        /// <summary>
+        /// muestra los datos de los productos
+        /// </summary>
+        /// <param name="p"></param>
+        /// <returns></returns>
         private static string Mostrar(Producto p)
         {
             StringBuilder sb = new StringBuilder();
@@ -36,7 +53,10 @@ namespace Entidades
             return sb.ToString();
         }
 
-
+        /// <summary>
+        /// llama a mostrar 
+        /// </summary>
+        /// <param name="p"></param>
         public static explicit operator string(Producto p)
         {
             return Producto.Mostrar(p);
